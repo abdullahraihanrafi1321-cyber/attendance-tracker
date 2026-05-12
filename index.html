@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @keyframes rise {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeScale {
+    0% { opacity: 0; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(60px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes glowPulse {
+    0% { box-shadow: 0 0 8px rgba(255,255,255,0.15); }
+    50% { box-shadow: 0 0 18px rgba(255,255,255,0.35); }
+    100% { box-shadow: 0 0 8px rgba(255,255,255,0.15); }
+  }
+</style>
+</head>
+<body style="background:#e6f0dc;">
+
+<div id="loginBox" class="h-screen flex items-center justify-center">
+  <div class="bg-gradient-to-br from-green-500 to-blue-400 p-6 w-[90vw] md:w-[50%] h-[50vh] rounded-[10px] shadow-2xl flex flex-col justify-center gap-2" style="animation: fadeScale 0.8s ease-out, glowPulse 4s infinite;">
+    <h2 class="text-3xl font-bold mb-3 text-center text-white">Login</h2>
+    <input id="reg" placeholder="Reg No" class="border p-2 w-full mb-2 rounded-[8px]">
+    <input id="pass" type="password" placeholder="Password" class="border p-2 w-full mb-2 rounded-[8px]">
+    <button onclick="login()" style="background:#235347;" class="w-full p-2 rounded font-bold text-[#a6fe70] transition-all duration-300 hover:scale-[1.03] hover:shadow-xl active:scale-[0.97]">
+      Login
+    </button>
+  </div>
+</div>
+
+<div id="main" class="hidden p-4">
+  <div class="flex justify-between items-center mb-4">
+    <h2 id="userText" class="font-bold text-xl"></h2>
+    <button onclick="logout()" class="text-red-500 text-xl font-bold p-2 px-4 rounded-lg border-2 border-red-500 bg-transparent transition-all duration-300 hover:bg-red-500 hover:text-white">Logout</button>
+  </div>
+
+  <div id="courseBox" class="flex flex-col items-center justify-center mx-auto gap-[15px] w-[90vw]"></div>
+
+  <div id="box" class="hidden mt-5 p-4 rounded shadow" style="background:white;"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
