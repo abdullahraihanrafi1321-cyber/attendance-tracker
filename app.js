@@ -192,3 +192,5 @@ window.onload = function () {
     if (savedCourse) { openCourse(savedCourse); }
   }
 }
+
+// If there is something added it will be written here ..................
